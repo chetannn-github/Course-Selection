@@ -2,6 +2,7 @@ import express from "express";
 import { coursesRoutes } from "./routes/courses.routes.js";
 import { main } from "./config/db.config.js";
 import 'dotenv/config'
+import { authRoutes } from "./routes/auth.routes.js";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/api/courses", coursesRoutes);
+app.use("/api/auth",authRoutes)
 
 
 
